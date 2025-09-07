@@ -1,0 +1,362 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiny Piercing Jeweller - Timeless Accessories</title>
+  <meta name="description" content="Shiny Piercing Jeweller — elegant piercings, custom accessories, and radiant tooth gems. Timeless accessories, uniquely yours." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="icon" href="Images/Logo.JPG" />
+
+  <style>
+    /* Base styles */
+    :root {
+      --accent: #bfa18a; /* brand accent */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fcfcfc;
+      color: #1a1a1a;
+    }
+
+    /* Brand-specific typography and colors */
+    .brand-font { font-family: 'Playfair Display', serif; }
+    .dark-section { background-color: #1a1a1a; color: #fcfcfc; }
+    .text-accent { color: var(--accent); }
+    .bg-accent { background-color: var(--accent); }
+    .header-bg { background-color: #fcfcfc; }
+    .header-text { color: #1a1a1a; }
+
+    /* Header and Navigation */
+    .nav-link { transition: color 0.3s; position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0; height: 1px; display: block; margin-top: 5px; right: 0;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+    .nav-link:hover::after { width: 100%; left: 0; }
+
+    /* Ensure anchor scroll doesn't hide under sticky header */
+    #products { scroll-margin-top: 96px; }
+
+    /* Hero Section */
+    .hero-section { height: 45vh; max-height: 400px; }
+    @media (max-width: 768px) {
+      .hero-section { height: auto; max-height: none; padding-top: 50px; padding-bottom: 50px; }
+    }
+
+    /* Product Cards and Effects */
+    .product-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1), 0 6px 10px -3px rgba(0,0,0,0.08);
+    }
+    .product-image { transition: transform 0.5s ease-in-out; }
+    .product-card:hover .product-image { transform: scale(1.05); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded">Skip to content</a>
+
+  <header class="header-bg sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Left: Social / Mobile menu button -->
+        <div class="flex items-center">
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none mr-4" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+              <i data-feather="menu" class="h-6 w-6"></i>
+            </button>
+          </div>
+
+          <a href="https://www.instagram.com/shiny.piercing.jeweller" target="_blank" rel="noopener noreferrer" class="flex items-center text-gray-600 hover:text-gray-900 transition-colors" aria-label="Visit our Instagram">
+            <i data-feather="instagram" class="w-5 h-5 mr-2"></i>
+            <span class="hidden md:inline text-sm">@shiny.piercing.jeweller</span>
+          </a>
+        </div>
+
+        <!-- Center: Logo + Brand name -->
+        <div class="flex-grow flex items-center justify-center">
+          <div class="flex items-center space-x-3">
+            <img src="Images/Logo.JPG" alt="Shiny Piercing Jeweller logo" class="h-10 w-10 rounded-full object-cover" loading="lazy" />
+            <a href="index.html" class="text-3xl font-bold header-text tracking-wider brand-font">Shiny Piercing Jeweller</a>
+          </div>
+        </div>
+
+        <!-- Right: Desktop nav -->
+        <nav class="hidden md:flex items-center space-x-12" aria-label="Main navigation">
+          <a href="Index.html"nav-link font-semibold header-text" aria-current="page">Home</a>
+          <a href="About.html" class="nav-link text-gray-600 hover:text-gray-900">About</a>
+          <a href="#products" class="nav-link text-gray-600 hover:text-gray-900">Shop</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 shadow-inner" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html" class="block py-2 px-6 text-sm text-gray-800 font-semibold">Home</a>
+      <a href="about.html" class="block py-2 px-6 text-sm text-gray-600 hover:text-gray-800">About</a>
+      <a href="#products" class="block py-2 px-6 text-sm text-gray-600 hover:text-gray-800">Shop</a>
+    </div>
+  </header>
+
+  <main id="main">
+    
+    <!-- Hero -->
+<section class="hero-section relative flex items-center justify-center text-center px-6 bg-cover bg-center" style="background-image: url('Images/background.jpg');">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 p-6 rounded-lg max-w-2xl">
+    <h1 class="text-3xl md:text-4xl font-bold text-white leading-tight tracking-wide brand-font">Timeless Jewellery, Uniquely Yours</h1>
+    <p class="mt-3 text-sm md:text-base text-gray-200 mx-auto leading-relaxed">Discover our collection of high-quality piercings, custom accessories, and radiant tooth gems.</p>
+  </div>
+</section>
+
+    
+    <!-- Contact -->
+  <section class="py-16 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-center relative overflow-hidden">
+  <!-- Decorative subtle shimmer / luxury feel -->
+  <div class="absolute inset-0">
+    <div class="w-full h-full bg-[url('Images/shimmer.png')] bg-no-repeat bg-center opacity-5"></div>
+  </div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 brand-font">Elevate Your Style</h2>
+    <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+      Discover the allure of our timeless jewellery
+      <span class="text-accent font-semibold">@shiny.piercing.jeweller</span> 
+      Contact us directly on Instagram to make your purchase and own a piece of elegance.
+    </p>
+    <a href="https://www.instagram.com/shiny.piercing.jeweller" target="_blank" rel="noopener noreferrer"
+       class="inline-block bg-accent text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:opacity-90 transition-all duration-300 text-lg">
+       Contact Us
+    </a>
+  </div>
+</section>
+
+
+    <!-- Products -->
+    <section id="products" class="py-24">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 brand-font">Our Exquisite Collection</h2>
+
+        <h3 class="text-3xl font-bold text-center mb-12 text-gray-900 brand-font">Jewellery</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Item 1 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Diamond Belly Ring">
+              <img src="Images/Diamond belly ring R40.00.jpg" alt="Diamond belly ring" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Diamond Belly Ring</h3>
+              <p class="text-lg font-bold text-accent">R40.00</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Hoop">
+              <img src="Images/Hoop R20.00.jpg" alt="Hoop" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Hoop</h3>
+              <p class="text-lg font-bold text-accent">R20.00</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Septum Ring">
+              <img src="Images/Septum ring R35.00.jpg" alt="Septum ring" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Septum Ring</h3>
+              <p class="text-lg font-bold text-accent">R35.00</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Normal Belly Ring">
+              <img src="Images/Normal belly ring R35.00.jpg" alt="Normal belly ring" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Normal Belly Ring</h3>
+              <p class="text-lg font-bold text-accent">R35.00</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Nose Stud">
+              <img src="Images/Nose stud R20.00.jpg" alt="Nose stud" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Nose Stud</h3>
+              <p class="text-lg font-bold text-accent">R20.00</p>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Nipple Ring">
+              <img src="Images/Nipple ring Price R35.00.jpg" alt="Nipple ring" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Nipple Ring</h3>
+              <p class="text-lg font-bold text-accent">R35.00</p>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View L-Shape Nose Stud">
+              <img src="Images/Nosering L stud R35.00.jpg" alt="L-shape nose stud" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">L-Shape Nose Stud</h3>
+              <p class="text-lg font-bold text-accent">R35.00</p>
+            </div>
+          </div>
+ <div class="product-card relative shadow-lg overflow-hidden rounded-lg h-72">
+  
+  <!-- Gallery 8 -->
+        <div class="product-card relative shadow-lg overflow-hidden rounded-lg h-80">
+  <a href="https://www.instagram.com/shiny.piercing.jeweller" target="_blank" rel="noopener noreferrer" class="block h-full w-full">
+    <!-- Background image -->
+    <img src="Images/And more.jpg" alt="And more" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    <!-- Overlay text -->
+    
+    </div>
+  </a>
+</div>
+
+        </div>
+
+        <!-- Gallery -->
+        <h3 class="text-3xl font-bold text-center mt-24 mb-12 text-gray-900 brand-font">Gallery</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Gallery 1 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Custom Bracelet">
+              <img src="Images/Custom bracelet R150.00.jpg" alt="Custom bracelet" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Custom Bracelet</h3>
+              
+            </div>
+          </div>
+
+          <!-- Gallery 2 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Custom Necklace">
+              <img src="Images/Custom necklace R200.00.jpg" alt="Custom necklace" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Custom Necklace</h3>
+              
+            </div>
+          </div>
+
+          <!-- Gallery 3 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Belly Ring">
+              <img src="Images/Belly piercing.jpg" alt="Belly ring piercing" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Belly Ring</h3>
+            </div>
+          </div>
+
+          <!-- Gallery 4 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Septum Piercing">
+              <img src="Images/Septum piercing.jpg" alt="Septum piercing" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Septum Piercing</h3>
+            </div>
+          </div>
+
+          <!-- Gallery 5 (check filename) -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Custom Necklace (confirm filename)">
+              <img src="Images/custtom necklace R2000000.jpg" alt="Custom necklace (please confirm filename & price)" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Custom Necklace</h3>
+            </div>
+          </div>
+
+          <!-- Gallery 7 -->
+          <div class="product-card bg-white text-center shadow-lg">
+            <a href="#" aria-label="View Tooth Gems">
+              <img src="Images/Tooth gems range from R50.00 to R200.00.jpg" alt="Tooth gems" class="w-full h-72 object-cover product-image" loading="lazy" />
+            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Tooth Gems</h3>
+              
+            </div>
+          </div>
+
+          <!-- Gallery 8 -->
+        <div class="product-card relative shadow-lg overflow-hidden rounded-lg h-80">
+  <a href="https://www.instagram.com/shiny.piercing.jeweller" target="_blank" rel="noopener noreferrer" class="block h-full w-full">
+    <!-- Background image -->
+    <img src="Images/And more.jpg" alt="And more" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    <!-- Overlay text -->
+    
+    </div>
+  </a>
+</div>
+
+
+    
+  </div>
+</div>
+
+
+            
+              
+              
+            </div>
+          </div> 
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dark-section border-t border-gray-700">
+    <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+        <p>&copy; 2025 Shiny Piercing Jeweller. All Rights Reserved.</p>
+        <p class="mt-2 text-sm">Crafted for elegance, designed for you.</p>
+    </div>
+</footer>
+
+<script>
+    feather.replace();
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

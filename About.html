@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shiny Piercing Jeweller</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fcfcfc;
+        color: #1a1a1a;
+    }
+
+    .brand-font {
+        font-family: 'Playfair Display', serif;
+    }
+    .accent-color { color: #bfa18a; }
+    .accent-bg { background-color: #bfa18a; }
+    .header-bg { background-color: #fcfcfc; }
+    .header-text { color: #1a1a1a; }
+
+    .nav-link { transition: color 0.3s; position: relative; }
+    .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; display: block; margin-top: 5px; right: 0; background: #bfa18a; transition: width 0.4s ease; }
+    .nav-link:hover::after { width: 100%; left: 0; }
+
+    #mobile-menu a { color: #1a1a1a; }
+
+    .feature-card {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        background-color: #fff;
+    }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.08); }
+
+    .cta-button {
+        border: 2px solid #bfa18a;
+        color: #bfa18a;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .cta-button:hover { background-color: #bfa18a; color: #fcfcfc; }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="header-bg sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                <i data-feather="menu" class="h-6 w-6"></i>
+            </button>
+        </div>
+        
+        <div class="flex-grow flex items-center justify-center">
+            <div class="flex items-center space-x-3">
+                <img src="Image/Logo.JPG" class="h-10 w-10 rounded-full object-cover">
+                <a href="index.html" class="text-2xl md:text-3xl font-bold header-text tracking-wider brand-font">Shiny Piercing Jeweller</a>
+            </div>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-10">
+            <a href="Index.html" class="nav-link font-semibold header-text">Home</a>
+            <a href="about.html" class="nav-link text-gray-600 hover:text-gray-900">About</a>
+            <a href="Index.html" class="nav-link text-gray-600 hover:text-gray-900">Shop</a>
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 shadow-inner">
+        <a href="index.html" class="block py-2 px-6 text-sm text-gray-800 font-semibold">Home</a>
+        <a href="about.html" class="block py-2 px-6 text-sm text-gray-600 hover:text-gray-800">About</a>
+        <a href="#products" class="block py-2 px-6 text-sm text-gray-600 hover:text-gray-800">Shop</a>
+    </div>
+</header>
+
+<main>
+    <!-- About Section -->
+    <section class="py-24 bg-white">
+    <div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6 text-gray-700">
+            
+            <!-- Normal heading without background -->
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 brand-font mb-2">
+                Elegance Meets Creativity
+            </h2>
+
+            <p>Our brand was created to give individuals creative freedom when it comes to accessories, we aim at enhancing beauty through body piercings and jewellery. Society is given a creative space where they can bring forward their one of a kind ideas and we let those ideas come to life through a form of custom jewellery, which ensures a sense of uniqueness and individuality. Youth can express themselves in our platforms by showcasing our work (piercings, tooth gems as well as jewellery). Our work is a form art which is intended to displayed everywhere you go.</p>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 brand-font mb-2">Our Customers</h2>
+            <p>Someone who intends to be unique, our customer is stylish yet elegant. Our customers are diverse and versatile.</p>
+
+            <a href="https://www.instagram.com/shiny.piercing.jeweller" target="_blank" rel="noopener noreferrer"
+               class="inline-block mt-6 cta-button px-8 py-3 rounded-full font-semibold shadow-lg hover:opacity-90 transition-all duration-300 text-lg">
+               Explore Our Instagram
+            </a>
+        </div>
+
+        <!-- Image with background text -->
+        <div class="relative rounded-lg shadow-lg overflow-hidden">
+            <img src="Images/custtom necklace R2000000.jpg" alt="Elegant jewellery showcase" class="w-full h-full object-cover">
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                <h2 class="text-3xl md:text-4xl font-bold text-white brand-font">
+                    Elegant Jewellery
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Optional Feature Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-3 gap-8 text-center">
+            <div class="feature-card p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Custom Designs</h3>
+                <p class="text-gray-700">Every piece is tailored to your unique vision.</p>
+            </div>
+            <div class="feature-card p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">High-Quality Materials</h3>
+                <p class="text-gray-700">We use only premium materials for lasting elegance.</p>
+            </div>
+            <div class="feature-card p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Luxury Experience</h3>
+                <p class="text-gray-700">From consultation to delivery, every step is refined and elegant.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="dark-section border-t border-gray-700">
+    <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+      <p>&copy; <span id="year"></span> Shiny Piercing Jeweller. All Rights Reserved.</p>
+      <p class="mt-2 text-sm">Crafted for elegance, designed for you.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Run once DOM is ready
+    document.addEventListener('DOMContentLoaded', function () {
+      // Feather Icons
+      if (window.feather && typeof feather.replace === 'function') {
+        feather.replace();
+      }
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.toggle('hidden');
+          menuBtn.setAttribute('aria-expanded', String(!isHidden));
+        });
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // Current year in footer
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
+
